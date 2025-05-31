@@ -1,0 +1,130 @@
+.trustDashboard {
+  width: 100%;
+}
+
+.dashboardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.dashboardHeader h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.dashboardDescription {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.metricsOverview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.chartRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chartContainer {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chartContainer h3 {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.tableSection {
+  margin-bottom: 2rem;
+}
+
+.tableSection h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.insightsSection {
+  margin-top: 2rem;
+}
+
+.insightsSection h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.insightsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.insightCard {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.insightIcon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.insightIcon:global(.up) {
+  color: #2ecc71;
+}
+
+.insightIcon:global(.down) {
+  color: #e74c3c;
+}
+
+.insightIcon:global(.neutral) {
+  color: #f39c12;
+}
+
+.insightContent {
+  flex: 1;
+}
+
+.insightContent h4 {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.insightContent p {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chartRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .metricsOverview {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .insightsList {
+    grid-template-columns: 1fr;
+  }
+}

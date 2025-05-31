@@ -1,0 +1,254 @@
+.notificationSystem {
+  position: relative;
+}
+
+.notificationButton {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  color: #4A5568;
+  transition: all 0.2s ease;
+}
+
+.notificationButton:hover {
+  background-color: #EDF2F7;
+  color: #2D3748;
+}
+
+.bellIcon {
+  color: inherit;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #E53E3E;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.notificationDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 320px;
+  max-height: 480px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.dropdownTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0;
+}
+
+.markAllReadButton {
+  background: none;
+  border: none;
+  color: #4299E1;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.markAllReadButton:hover {
+  text-decoration: underline;
+}
+
+.markAllReadButton:disabled {
+  color: #A0AEC0;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  margin: 8px 16px;
+  padding: 8px 12px;
+  background-color: #FED7D7;
+  border-left: 3px solid #E53E3E;
+  color: #C53030;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.dismissButton {
+  background: none;
+  border: none;
+  color: #C53030;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.emptyNotifications {
+  padding: 24px 16px;
+  text-align: center;
+  color: #A0AEC0;
+  font-style: italic;
+}
+
+.notificationsList {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.notificationItem {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.notificationItem:hover {
+  background-color: #F7FAFC;
+}
+
+.notificationItem.unread {
+  background-color: #EBF8FF;
+}
+
+.notificationItem.unread:hover {
+  background-color: #BEE3F8;
+}
+
+.notificationContent {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.notificationHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.notificationIcon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.infoIcon {
+  color: #4299E1;
+}
+
+.successIcon {
+  color: #48BB78;
+}
+
+.warningIcon {
+  color: #ED8936;
+}
+
+.errorIcon {
+  color: #E53E3E;
+}
+
+.notificationTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2D3748;
+  flex: 1;
+}
+
+.notificationTime {
+  font-size: 0.6875rem;
+  color: #A0AEC0;
+  white-space: nowrap;
+}
+
+.notificationMessage {
+  font-size: 0.8125rem;
+  color: #4A5568;
+  line-height: 1.4;
+  margin-left: 24px;
+}
+
+.notificationRelated {
+  font-size: 0.75rem;
+  color: #718096;
+  margin-top: 4px;
+  margin-left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.relatedLabel {
+  font-weight: 600;
+}
+
+.relatedName {
+  font-style: italic;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: #A0AEC0;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.notificationItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background-color: #FED7D7;
+  color: #E53E3E;
+}
+
+@media (max-width: 768px) {
+  .notificationDropdown {
+    width: 280px;
+    right: -8px;
+  }
+  
+  .deleteButton {
+    opacity: 1;
+  }
+}

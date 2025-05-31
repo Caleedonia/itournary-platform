@@ -1,0 +1,49 @@
+# .deploy.yml
+version: '1.0'
+application:
+  name: paradise-partners
+  type: nextjs
+  environment: production
+
+build:
+  node_version: 16
+  commands:
+    - npm ci
+    - npm run build
+
+deploy:
+  target: aws-s3-cloudfront
+  region: us-east-1
+  distribution_id: ${CLOUDFRONT_DISTRIBUTION_ID}
+  artifacts:
+    - source: .next/
+      destination: /
+    - source: public/
+      destination: /
+
+routes:
+  - path: "/_next/*"
+    cache_control: "public, max-age=31536000, immutable"
+  - path: "/static/*"
+    cache_control: "public, max-age=31536000, immutable"
+  - path: "/*"
+    cache_control: "public, max-age=0, must-revalidate"
+
+environment_variables:
+  - name: MONGODB_URI
+    value: ${MONGODB_URI}
+  - name: STRIPE_SECRET_KEY
+    value: ${STRIPE_SECRET_KEY}
+  - name: NEXT_PUBLIC_API_URL
+    value: ${API_URL}
+  # Adding NEXTAUTH_URL and NEXTAUTH_SECRET as these are common for NextAuth in production
+  - name: NEXTAUTH_URL
+    value: ${PRODUCTION_URL} # This will need to be set in the Jenkins/AWS environment
+  - name: NEXTAUTH_SECRET
+    value: ${NEXTAUTH_SECRET_VALUE} # This should be a strong, unique secret set in Jenkins/AWS
+
+health_check:
+  path: /api/health
+  success_codes: [200]
+  interval: 60
+

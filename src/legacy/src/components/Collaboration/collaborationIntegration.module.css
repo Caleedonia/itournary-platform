@@ -1,0 +1,77 @@
+.collaborationIntegration {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tabButton {
+  padding: 16px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #718096;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  color: #4A5568;
+}
+
+.activeTab {
+  color: #4299E1;
+  border-bottom-color: #4299E1;
+}
+
+.notificationContainer {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 16px;
+  }
+  
+  .tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .tabButton {
+    flex: 1;
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 0.875rem;
+  }
+  
+  .notificationContainer {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}

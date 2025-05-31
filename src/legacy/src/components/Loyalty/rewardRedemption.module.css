@@ -1,0 +1,360 @@
+.redemptionContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.confirmStep h2,
+.paymentStep h2,
+.successStep h2,
+.errorStep h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.rewardSummary {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.rewardImage {
+  flex: 0 0 200px;
+  height: 150px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rewardImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: #dfe6e9;
+  background-image: linear-gradient(45deg, #dfe6e9 25%, #c8d6e5 25%, #c8d6e5 50%, #dfe6e9 50%, #dfe6e9 75%, #c8d6e5 75%, #c8d6e5 100%);
+  background-size: 20px 20px;
+}
+
+.rewardDetails {
+  flex: 1;
+}
+
+.rewardDetails h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.partnerInfo {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.8rem;
+}
+
+.rewardDescription {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.pointsInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.pointsCost, .pointsBalance {
+  display: flex;
+  flex-direction: column;
+}
+
+.pointsLabel {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 0.2rem;
+}
+
+.pointsValue {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.splitTenderInfo {
+  background-color: #fff8e1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.splitTenderAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.alertIcon {
+  font-size: 1.2rem;
+}
+
+.splitTenderBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.splitTenderItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.termsAndConditions {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.termsAndConditions h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.termsAndConditions p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.termsAndConditions ul {
+  font-size: 0.9rem;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.termsAndConditions li {
+  margin-bottom: 0.3rem;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cancelButton, .confirmButton, .retryButton, .doneButton {
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.cancelButton {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.cancelButton:hover {
+  background-color: #dfe6e9;
+}
+
+.confirmButton {
+  background-color: #3498db;
+  color: white;
+  flex: 1;
+}
+
+.confirmButton:hover {
+  background-color: #2980b9;
+}
+
+.confirmButton:disabled, .cancelButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Payment Step */
+.paymentSummary {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.paymentItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.cashAmount {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.formGroup input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.formRow .formGroup {
+  flex: 1;
+}
+
+/* Success Step */
+.successStep {
+  text-align: center;
+  padding: 1rem;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.successMessage {
+  margin-bottom: 1.5rem;
+}
+
+.successMessage p {
+  margin-bottom: 0.8rem;
+}
+
+.pointsSummary {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.pointsUsed, .pointsRemaining {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doneButton {
+  background-color: #2ecc71;
+  color: white;
+  padding: 0.8rem 2rem;
+}
+
+.doneButton:hover {
+  background-color: #27ae60;
+}
+
+/* Error Step */
+.errorStep {
+  text-align: center;
+  padding: 1rem;
+}
+
+.errorIcon {
+  width: 80px;
+  height: 80px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.errorMessage {
+  margin-bottom: 1.5rem;
+}
+
+.errorMessage p {
+  margin-bottom: 0.8rem;
+}
+
+.retryButton {
+  background-color: #e74c3c;
+  color: white;
+  flex: 1;
+}
+
+.retryButton:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rewardSummary {
+    flex-direction: column;
+  }
+  
+  .rewardImage {
+    flex: 0 0 auto;
+    height: 180px;
+  }
+  
+  .pointsInfo {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .formRow {
+    flex-direction: column;
+  }
+  
+  .pointsSummary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,193 @@
+.integrationContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboardControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.dashboardSelector {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.dashboardButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  background-color: transparent;
+  color: #7f8c8d;
+  white-space: nowrap;
+}
+
+.dashboardButton:hover {
+  background-color: #ecf0f1;
+}
+
+.dashboardButton.active {
+  background-color: #3498db;
+  color: white;
+}
+
+.dateRangeSelector {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.dateRangeSelect {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #dfe6e9;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #2c3e50;
+}
+
+.settingsButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #dfe6e9;
+  background-color: white;
+  color: #2c3e50;
+}
+
+.settingsButton:hover {
+  background-color: #ecf0f1;
+}
+
+.dashboardContent {
+  min-height: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.consentRequired {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.consentRequired h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.consentRequired p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0 0 1.5rem 0;
+  max-width: 500px;
+}
+
+.enableButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  background-color: #3498db;
+  color: white;
+}
+
+.enableButton:hover {
+  background-color: #2980b9;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  color: #7f8c8d;
+}
+
+.settingsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.settingsModalContent {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #7f8c8d;
+}
+
+.closeButton:hover {
+  color: #2c3e50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboardControls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .dashboardSelector {
+    width: 100%;
+  }
+  
+  .dateRangeSelector {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .dateRangeSelect {
+    width: 100%;
+  }
+  
+  .settingsButton {
+    width: 100%;
+  }
+}

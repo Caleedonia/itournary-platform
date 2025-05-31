@@ -1,0 +1,389 @@
+.sustainabilityContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.sustainabilityHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sustainabilityHeader h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.sustainabilityTagline {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.impactDashboard {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.carbonVisualization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carbonBubble {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+  transition: all 0.5s ease;
+}
+
+.carbonValue {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carbonUnit {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.impactStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.impactStat {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.milestoneProgress {
+  flex-basis: 100%;
+  margin-top: 1rem;
+}
+
+.milestoneLabel {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.milestoneBarContainer {
+  height: 8px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.milestoneBar {
+  height: 100%;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.actionsSection {
+  margin-bottom: 2rem;
+}
+
+.actionsSection h3 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.categoryTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryTab {
+  padding: 0.6rem 1rem;
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.categoryTab:hover {
+  background-color: #dfe6e9;
+}
+
+.activeCategory {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.actionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actionCard {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.actionCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.completedAction {
+  border-left: 4px solid #2ecc71;
+}
+
+.actionStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.completedBadge {
+  width: 30px;
+  height: 30px;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.pendingBadge {
+  width: 30px;
+  height: 30px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.actionContent {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.actionTitle {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.actionDescription {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.actionMetrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.actionMetric {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.metricLabel {
+  margin-right: 0.3rem;
+}
+
+.metricValue {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.commitButton, .viewDetailsButton {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.commitButton {
+  background-color: #3498db;
+  color: white;
+}
+
+.commitButton:hover {
+  background-color: #2980b9;
+}
+
+.viewDetailsButton {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.viewDetailsButton:hover {
+  background-color: #dfe6e9;
+}
+
+.noActions {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #7f8c8d;
+}
+
+.sustainabilityTips {
+  margin-bottom: 2rem;
+}
+
+.sustainabilityTips h3 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.tipsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tipCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tipIcon {
+  font-size: 1.8rem;
+}
+
+.tipContent {
+  flex: 1;
+}
+
+.tipContent h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.tipContent p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .impactDashboard {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .impactStats {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .actionCard {
+    flex-direction: column;
+  }
+  
+  .actionStatus {
+    padding: 1rem 0;
+  }
+  
+  .actionButton {
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  .tipsList {
+    grid-template-columns: 1fr;
+  }
+}

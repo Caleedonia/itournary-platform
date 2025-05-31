@@ -1,0 +1,72 @@
+.metricCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.metricHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.metricTitle {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.metricIcon {
+  color: #3498db;
+  font-size: 1.2rem;
+}
+
+.metricValue {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.metricChange {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 0.3rem;
+}
+
+.changeValue {
+  font-weight: 600;
+}
+
+.changeLabel {
+  color: #7f8c8d;
+}
+
+.positive {
+  color: #2ecc71;
+}
+
+.negative {
+  color: #e74c3c;
+}
+
+.neutral {
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .metricValue {
+    font-size: 1.5rem;
+  }
+  
+  .metricTitle {
+    font-size: 0.8rem;
+  }
+}

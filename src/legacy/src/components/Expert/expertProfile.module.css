@@ -1,0 +1,599 @@
+.profileContainer {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Cover Section */
+.coverSection {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 80px; /* Account for fixed header */
+}
+
+.coverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(44, 62, 80, 0.3), rgba(44, 62, 80, 0.7));
+}
+
+/* Profile Header */
+.profileHeader {
+  background-color: #fff;
+  padding: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profileHeaderContent {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.profileAvatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: -75px;
+  position: relative;
+  z-index: 2;
+}
+
+.profileAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileInfo {
+  margin-left: 2rem;
+  flex-grow: 1;
+}
+
+.profileName {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.profileTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.specializationTags {
+  display: flex;
+  gap: 1rem;
+}
+
+.specializationTag {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(78, 205, 196, 0.1); /* Soft Teal with opacity */
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.specializationTag i {
+  margin-right: 0.5rem;
+  color: #4ECDC4; /* Soft Teal */
+}
+
+.profileActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.contactButton {
+  padding: 0.8rem 1.5rem;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+.followButton {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid #2C3E50; /* Deep Indigo */
+  color: #2C3E50; /* Deep Indigo */
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.followButton:hover {
+  background-color: rgba(44, 62, 80, 0.05);
+}
+
+.followButton i {
+  margin-right: 0.5rem;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+/* Left Column */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #2C3E50; /* Deep Indigo */
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 2px;
+  background-color: #4ECDC4; /* Soft Teal */
+}
+
+/* Bio Section */
+.bioSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bioText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Expertise Section */
+.expertiseSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.expertiseCard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.expertiseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.expertiseImage {
+  height: 150px;
+  overflow: hidden;
+}
+
+.expertiseImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.expertiseCard:hover .expertiseImage img {
+  transform: scale(1.05);
+}
+
+.expertiseContent {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.expertiseTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.expertiseCount {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Success Stories Section */
+.storiesSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.storyCard {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.storyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.storyImage {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.storyCard:hover .storyImage img {
+  transform: scale(1.05);
+}
+
+.storyOccasion {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.storyContent {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.storyTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.storyLocation {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.storyLink {
+  color: #4ECDC4; /* Soft Teal */
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.storyLink:hover {
+  text-decoration: underline;
+}
+
+/* Right Column */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Credentials Section */
+.credentialsSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.credentialItem {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.credentialItem:last-child {
+  margin-bottom: 0;
+}
+
+.credentialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(44, 62, 80, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.credentialContent {
+  flex-grow: 1;
+}
+
+.credentialTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.credentialText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.certificationsList {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.certificationsList li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Trust Section */
+.trustSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.trustStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.trustStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trustStatIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(78, 205, 196, 0.1); /* Soft Teal with opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: #4ECDC4; /* Soft Teal */
+  font-size: 1.2rem;
+}
+
+.trustStatNumber {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2C3E50; /* Deep Indigo */
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.trustStatLabel {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonialCard {
+  margin-bottom: 2rem;
+  border-left: 3px solid #4ECDC4; /* Soft Teal */
+  padding-left: 1.5rem;
+}
+
+.testimonialCard:last-child {
+  margin-bottom: 0;
+}
+
+.testimonialContent {
+  margin-bottom: 1.2rem;
+}
+
+.testimonialText {
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.testimonialFooter {
+  display: flex;
+  align-items: center;
+}
+
+.testimonialAuthorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.testimonialAuthorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonialAuthorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialAuthorName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.testimonialOccasion {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Contact Section */
+.contactSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.contactText {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contactButtonLarge {
+  padding: 1rem 2rem;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contactButtonLarge:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .expertiseGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .storiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profileHeaderContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profileInfo {
+    margin: 1.5rem 0;
+  }
+  
+  .specializationTags {
+    justify-content: center;
+  }
+  
+  .storiesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trustStats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileName {
+    font-size: 2rem;
+  }
+  
+  .profileActions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .contactButton, .followButton {
+    width: 100%;
+  }
+}

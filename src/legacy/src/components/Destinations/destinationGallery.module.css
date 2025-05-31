@@ -1,0 +1,274 @@
+.galleryContainer {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.compactMode {
+  margin-bottom: 16px;
+}
+
+.galleryHeader {
+  margin-bottom: 20px;
+}
+
+.galleryTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin-bottom: 8px;
+}
+
+.galleryDescription {
+  font-size: 0.875rem;
+  color: #4A5568;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.regionFilters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.regionButton {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  background-color: #EDF2F7;
+  color: #4A5568;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.regionButton:hover {
+  background-color: #E2E8F0;
+}
+
+.regionButton.active {
+  background-color: #4299E1;
+  color: white;
+}
+
+.searchContainer {
+  position: relative;
+  min-width: 200px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px 12px;
+  padding-left: 32px;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  font-size: 0.8125rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234A5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 14px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #4299E1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.compactGrid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.destinationCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.destinationCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.destinationCard.selected {
+  border: 2px solid #4299E1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.3);
+}
+
+.destinationImageContainer {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.compactGrid .destinationImageContainer {
+  height: 120px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.destinationImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.destinationCard:hover .destinationImage {
+  transform: scale(1.05);
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDF2F7;
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.popularBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #DD6B20;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.destinationInfo {
+  padding: 12px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.compactGrid .destinationInfo {
+  padding: 8px;
+}
+
+.destinationName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 8px 0;
+}
+
+.compactGrid .destinationName {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.destinationDescription {
+  font-size: 0.8125rem;
+  color: #4A5568;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tag {
+  font-size: 0.6875rem;
+  color: #4A5568;
+  background-color: #EDF2F7;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.selectedIndicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: #4299E1;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #4A5568;
+}
+
+.loadingSpinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(66, 153, 225, 0.2);
+  border-radius: 50%;
+  border-top-color: #4299E1;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .filterBar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .searchContainer {
+    width: 100%;
+  }
+  
+  .destinationsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .compactGrid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}

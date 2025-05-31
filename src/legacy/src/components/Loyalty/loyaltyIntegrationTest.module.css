@@ -1,0 +1,219 @@
+.testContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.testHeader {
+  margin-bottom: 2rem;
+}
+
+.testHeader h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.testSummary {
+  display: flex;
+  gap: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.testStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.passedValue {
+  color: #2ecc71;
+}
+
+.failedValue {
+  color: #e74c3c;
+}
+
+.pendingValue {
+  color: #f39c12;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 0.3rem;
+}
+
+.testList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.testCase {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.testCase:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testCase.passed {
+  border-left: 4px solid #2ecc71;
+}
+
+.testCase.failed {
+  border-left: 4px solid #e74c3c;
+}
+
+.testCase.pending {
+  border-left: 4px solid #f39c12;
+}
+
+.testStatus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.passedIcon {
+  width: 30px;
+  height: 30px;
+  background-color: #2ecc71;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.failedIcon {
+  width: 30px;
+  height: 30px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.pendingIcon {
+  width: 30px;
+  height: 30px;
+  background-color: #f39c12;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.testInfo {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.testName {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.testDescription {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.testDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.testSteps, .testExpectations {
+  flex: 1;
+  min-width: 250px;
+}
+
+.testSteps h4, .testExpectations h4 {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.testSteps ul, .testExpectations ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.testSteps li, .testExpectations li {
+  margin-bottom: 0.3rem;
+}
+
+.testConclusion {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.testConclusion h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.testConclusion p {
+  font-size: 0.95rem;
+  color: #2c3e50;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.testConclusion p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testSummary {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .testStat {
+    flex: 1;
+    min-width: 100px;
+  }
+  
+  .testDetails {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

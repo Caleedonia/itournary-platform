@@ -1,0 +1,186 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2C3E50; /* Deep Indigo */
+  color: #fff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.logoText {
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+.logoHighlight {
+  color: #FF6B6B; /* Vibrant Coral */
+  font-style: italic;
+}
+
+.nav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0 1rem;
+}
+
+.navLink {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover {
+  color: #4ECDC4; /* Soft Teal */
+}
+
+.navLink:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4ECDC4; /* Soft Teal */
+  transition: width 0.3s ease;
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.loginButton {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.loginButton:hover {
+  color: #4ECDC4; /* Soft Teal */
+}
+
+.signupButton {
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signupButton:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menuBar {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #2C3E50; /* Deep Indigo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navOpen {
+    right: 0;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navItem {
+    margin: 1rem 0;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .menuOpen .menuBar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menuOpen .menuBar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuOpen .menuBar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

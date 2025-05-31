@@ -1,0 +1,317 @@
+.gamificationContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.gamificationHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gamificationHeader h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.gamificationTagline {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tabsContainer {
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tabButton {
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  color: #7f8c8d;
+}
+
+.tabButton:hover {
+  color: #3498db;
+}
+
+.activeTab {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.filterBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterDropdown {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 0.9rem;
+  min-width: 200px;
+}
+
+.questCount, .achievementCount {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.questsList, .achievementsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.questCard, .achievementCard {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.questCard:hover, .achievementCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.questIcon, .achievementIcon {
+  flex: 0 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.questIconPlaceholder, .achievementIconPlaceholder {
+  width: 60px;
+  height: 60px;
+  background-color: #dfe6e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  font-size: 1.5rem;
+}
+
+.questContent, .achievementContent {
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.questHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.questTitle, .achievementTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.questDifficulty {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.questDifficulty[data-difficulty="easy"] {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.questDifficulty[data-difficulty="medium"] {
+  background-color: #f39c12;
+  color: white;
+}
+
+.questDifficulty[data-difficulty="hard"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.questDifficulty[data-difficulty="expert"] {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.questDescription, .achievementDescription {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.questProgress {
+  margin-bottom: 1rem;
+}
+
+.progressBarContainer {
+  height: 8px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #3498db;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progressText {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  text-align: right;
+}
+
+.questFooter, .achievementFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questReward {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.rewardValue {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.questExpiration {
+  font-size: 0.8rem;
+  color: #e74c3c;
+}
+
+.achievementDate {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.achievementRarity {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.achievementCard[data-rarity="common"] .achievementRarity {
+  background-color: #bdc3c7;
+  color: white;
+}
+
+.achievementCard[data-rarity="uncommon"] .achievementRarity {
+  background-color: #3498db;
+  color: white;
+}
+
+.achievementCard[data-rarity="rare"] .achievementRarity {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.achievementCard[data-rarity="epic"] .achievementRarity {
+  background-color: #f39c12;
+  color: white;
+}
+
+.achievementCard[data-rarity="legendary"] .achievementRarity {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.noQuests, .noAchievements {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .questCard, .achievementCard {
+    flex-direction: column;
+  }
+  
+  .questIcon, .achievementIcon {
+    flex: 0 0 auto;
+    padding: 1rem;
+  }
+  
+  .filterBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .filterDropdown {
+    width: 100%;
+  }
+}

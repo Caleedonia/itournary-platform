@@ -1,0 +1,49 @@
+# Paradise Partners Deployment Configuration
+platform: universal
+framework: nextjs
+
+# Build configuration
+build:
+  command: "npm run build"
+  output: .next
+
+# Runtime configuration
+runtime:
+  framework: nodejs
+  version: "16.x" # The build log showed Next.js 15.3.2, which typically requires Node 16, 18 or 20. Let's stick to 16 as per user doc for now.
+  root: ./
+
+# Environment variables (replace with your actual variables)
+environment:
+  - name: NODE_ENV
+    value: production
+  # These will need to be set in the deployment environment by the user or platform
+  # - name: MONGODB_URI
+  #   value: from_environment
+  # - name: NEXT_PUBLIC_API_URL
+  #   value: from_environment
+  - name: NEXTAUTH_URL # Required by NextAuth for production
+    value: "YOUR_PRODUCTION_URL" # This will need to be updated post-deployment or set by the platform
+  - name: NEXTAUTH_SECRET
+    value: "supersecretstringforsigningjwts" # This should be a strong, unique secret in production
+
+# Static assets
+static:
+  - source: public
+    destination: /
+
+# Server configuration
+server:
+  type: node
+  port: 3000
+  start_command: "npm start"
+
+# Routing configuration (simplified, as Next.js handles most routing internally)
+routes:
+  - source: /_next/static/(.*)
+    destination: static # This might need adjustment based on how the platform handles .next/static
+  - source: /api/(.*)
+    destination: api # Assuming API routes are handled by the Next.js server
+  - source: /(.*)
+    destination: ssr # Catch-all for Next.js server-side rendering
+

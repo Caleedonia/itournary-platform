@@ -1,0 +1,672 @@
+.dashboardContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.dashboardHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboardHeader h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tierBanner {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  border-radius: 12px;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tierInfo {
+  flex: 1;
+}
+
+.tierInfo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.pointsDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+.currentPoints {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.pointsLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.tierProgress {
+  flex: 2;
+  padding: 0 2rem;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.progressBarContainer {
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: #2ecc71;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.progressDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.progressItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+.progressBarSmall {
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.3rem 0;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: #f39c12;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.progressValue {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.multiplierBadge {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.multiplierValue {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.multiplierLabel {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.tabsContainer {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.tabButton {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  color: #7f8c8d;
+}
+
+.tabButton:hover {
+  color: #3498db;
+}
+
+.activeTab {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #3498db;
+}
+
+.tabContent {
+  padding: 2rem;
+}
+
+/* Overview Tab */
+.statsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.recentActivitySection {
+  margin-bottom: 2rem;
+}
+
+.recentActivitySection h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.transactionsList {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.transactionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.transactionItem:last-child {
+  border-bottom: none;
+}
+
+.transactionInfo {
+  flex: 1;
+}
+
+.transactionDescription {
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.transactionDate {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.transactionPoints {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+.referralSection {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.referralSection h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.referralSection p {
+  margin-bottom: 1rem;
+  color: #7f8c8d;
+}
+
+.referralCode {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.copyButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.shareButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.shareButton {
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: all 0.2s ease;
+}
+
+.shareButton:hover {
+  background-color: #dfe6e9;
+}
+
+/* Rewards Tab */
+.rewardsFilter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterDropdown {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.sortOptions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.sortButton {
+  background: none;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.activeSort {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.rewardsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.rewardCard {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rewardCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rewardImage {
+  height: 150px;
+  background-color: #dfe6e9;
+  background-image: linear-gradient(45deg, #dfe6e9 25%, #c8d6e5 25%, #c8d6e5 50%, #dfe6e9 50%, #dfe6e9 75%, #c8d6e5 75%, #c8d6e5 100%);
+  background-size: 20px 20px;
+}
+
+.rewardCategory {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 1rem 0.5rem;
+}
+
+.rewardTitle {
+  padding: 0 1rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.rewardDescription {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+.rewardFooter {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f1f1;
+}
+
+.rewardPoints {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.redeemButton {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.redeemButton:hover {
+  background-color: #2980b9;
+}
+
+/* Tiers Tab */
+.tiersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.tierCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f1f1;
+}
+
+.currentTierCard {
+  border: 2px solid #3498db;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+}
+
+.tierHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tierHeader h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+.currentTierBadge {
+  background-color: #3498db;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tierRequirements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.tierRequirement {
+  font-size: 0.9rem;
+}
+
+.requirementLabel {
+  color: #7f8c8d;
+  margin-right: 0.3rem;
+}
+
+.requirementValue {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.benefitsList {
+  padding-left: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.benefitsList li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #2c3e50;
+}
+
+.viewAllTiersLink {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.viewAllTiersLink a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* History Tab */
+.historyFilters {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dateFilter, .categoryFilter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.historyTable {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.historyTableHeader {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+}
+
+.historyTableBody {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.historyRow {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.historyRow:last-child {
+  border-bottom: none;
+}
+
+.historyRow:hover {
+  background-color: #f8f9fa;
+}
+
+.historyCell {
+  font-size: 0.9rem;
+}
+
+.paginationControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.paginationButton {
+  background-color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationInfo {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1rem;
+  }
+  
+  .tierBanner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .tierProgress {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .statsCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .rewardsList {
+    grid-template-columns: 1fr;
+  }
+  
+  .tiersList {
+    grid-template-columns: 1fr;
+  }
+  
+  .historyTableHeader, .historyRow {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  
+  .historyHeaderCell:nth-child(3), .historyHeaderCell:nth-child(4),
+  .historyCell:nth-child(3), .historyCell:nth-child(4) {
+    display: none;
+  }
+}

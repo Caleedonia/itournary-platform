@@ -1,0 +1,27 @@
+runtime: nodejs18 # or nodejs20, depending on Next.js version compatibility
+instance_class: F1 # Example instance class, adjust as needed
+
+# This is a very basic app.yaml for a Node.js app. 
+# For Next.js, a more specific configuration might be needed depending on the platform.
+# If this is for Google App Engine, you might need to specify build steps or handlers.
+
+handlers:
+  # Serve all static files with urls ending with a file extension
+  - url: /(.*\\..*)
+    static_files: .next/static/\\1
+    upload: .next/static/.*
+
+  # Serve static assets from the public folder
+  - url: /(.*)
+    static_files: public/\\1
+    upload: public/.*
+
+  # All other GAE requests are handled by the Next.js server
+  - url: /.*
+    script: auto
+    secure: always
+
+env_variables:
+  NODE_ENV: "production"
+  # Add any other environment variables your Next.js app needs at runtime
+

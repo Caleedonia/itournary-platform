@@ -1,0 +1,305 @@
+.validationContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.controlPanel {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.analyticsStatus {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  height: fit-content;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.controlSection {
+  margin-bottom: 2rem;
+}
+
+.controlTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  width: 5rem;
+}
+
+.button {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:hover {
+  background-color: #3182ce;
+}
+
+.button:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.results {
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.errorResults {
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.successResults {
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.resultsTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.eventTypeBreakdown {
+  margin-top: 0.75rem;
+}
+
+.breakdownTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.breakdownList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breakdownItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.breakdownItem:last-child {
+  border-bottom: none;
+}
+
+.eventType {
+  color: #4a5568;
+}
+
+.eventCount {
+  color: #2b6cb0;
+  font-weight: 500;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: #718096;
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+.statusItem {
+  display: flex;
+  margin-bottom: 0.75rem;
+}
+
+.statusLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  width: 8rem;
+}
+
+.statusValue {
+  font-size: 0.875rem;
+  color: #2b6cb0;
+}
+
+.statusEnabled {
+  font-size: 0.875rem;
+  color: #38a169;
+  font-weight: 500;
+}
+
+.statusDisabled {
+  font-size: 0.875rem;
+  color: #e53e3e;
+  font-weight: 500;
+}
+
+.preferencesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.preference {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.preferenceName {
+  color: #718096;
+}
+
+.preferenceEnabled {
+  color: #38a169;
+}
+
+.preferenceDisabled {
+  color: #e53e3e;
+}
+
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.enableButton {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.enableButton:hover {
+  background-color: #2f855a;
+}
+
+.disableButton {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.disableButton:hover {
+  background-color: #c53030;
+}
+
+.errorMessage {
+  color: #e53e3e;
+  font-size: 0.875rem;
+}
+
+.successMessage {
+  color: #38a169;
+  font-size: 0.875rem;
+}
+
+.issueSection {
+  margin-top: 0.75rem;
+}
+
+.issueTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.issueList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.errorItem {
+  font-size: 0.75rem;
+  color: #e53e3e;
+  padding: 0.25rem 0;
+}
+
+.warningItem {
+  font-size: 0.75rem;
+  color: #dd6b20;
+  padding: 0.25rem 0;
+}
+
+@media (max-width: 768px) {
+  .validationContainer {
+    grid-template-columns: 1fr;
+  }
+}

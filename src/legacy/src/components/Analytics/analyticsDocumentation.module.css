@@ -1,0 +1,99 @@
+.documentationContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.documentationHeader {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1rem;
+}
+
+.documentationHeader h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.documentationHeader p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.documentationSection {
+  margin-bottom: 2rem;
+}
+
+.documentationSection h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.documentationSection p {
+  font-size: 0.95rem;
+  color: #34495e;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.documentationSection ul {
+  padding-left: 1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.documentationSection li {
+  font-size: 0.95rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.codeBlock {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  overflow-x: auto;
+  margin: 0 0 1rem 0;
+  white-space: pre;
+}
+
+.documentationFooter {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.documentationFooter p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .documentationContainer {
+    padding: 1rem;
+  }
+  
+  .documentationHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .documentationSection h3 {
+    font-size: 1.2rem;
+  }
+  
+  .codeBlock {
+    font-size: 0.8rem;
+  }
+}

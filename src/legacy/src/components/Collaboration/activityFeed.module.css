@@ -1,0 +1,194 @@
+.activityFeed {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+}
+
+.feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.feedTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0;
+}
+
+.emptyFeed {
+  padding: 32px 24px;
+  text-align: center;
+  color: #A0AEC0;
+  font-style: italic;
+}
+
+.activitiesList {
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.activityItem {
+  display: flex;
+  gap: 12px;
+}
+
+.activityAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  width: 100%;
+  height: 100%;
+  background-color: #4299E1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.activityIcon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.createIcon {
+  color: #48BB78;
+}
+
+.updateIcon {
+  color: #4299E1;
+}
+
+.deleteIcon {
+  color: #E53E3E;
+}
+
+.shareIcon {
+  color: #9F7AEA;
+}
+
+.commentIcon {
+  color: #ED8936;
+}
+
+.joinIcon {
+  color: #38B2AC;
+}
+
+.activityMessage {
+  font-size: 0.875rem;
+  color: #4A5568;
+  line-height: 1.4;
+}
+
+.userName {
+  font-weight: 600;
+  color: #2D3748;
+}
+
+.itemType {
+  font-style: italic;
+}
+
+.itemName {
+  font-weight: 500;
+}
+
+.valueChange {
+  font-size: 0.8125rem;
+}
+
+.oldValue {
+  text-decoration: line-through;
+  color: #E53E3E;
+}
+
+.newValue {
+  color: #48BB78;
+}
+
+.shareMessage, .commentMessage {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #F7FAFC;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  color: #4A5568;
+  font-style: italic;
+}
+
+.activityTime {
+  font-size: 0.75rem;
+  color: #A0AEC0;
+  margin-top: 4px;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.loadMoreButton {
+  padding: 6px 12px;
+  background-color: white;
+  color: #4299E1;
+  border: 1px solid #4299E1;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  background-color: #EBF8FF;
+}
+
+.loadMoreButton:disabled {
+  color: #A0AEC0;
+  border-color: #E2E8F0;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .activitiesList {
+    padding: 12px 16px;
+  }
+}

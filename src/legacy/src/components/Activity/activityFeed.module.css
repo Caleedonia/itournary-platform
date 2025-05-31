@@ -1,0 +1,176 @@
+.activityFeed {
+  width: 100%;
+}
+
+.feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.feedTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.emptyFeed {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  color: #6b7280;
+}
+
+.activitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.activityAvatar {
+  flex-shrink: 0;
+}
+
+.avatarImage {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.activityContent {
+  flex: 1;
+}
+
+.activityHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.activityIcon {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.createIcon {
+  color: #10b981;
+}
+
+.updateIcon {
+  color: #3b82f6;
+}
+
+.deleteIcon {
+  color: #ef4444;
+}
+
+.shareIcon {
+  color: #8b5cf6;
+}
+
+.commentIcon {
+  color: #f59e0b;
+}
+
+.joinIcon {
+  color: #6366f1;
+}
+
+.activityMessage {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.userName {
+  font-weight: 600;
+  color: #111827;
+}
+
+.itemType {
+  color: #6b7280;
+}
+
+.itemName {
+  font-style: italic;
+}
+
+.valueChange {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.oldValue {
+  color: #ef4444;
+  text-decoration: line-through;
+}
+
+.newValue {
+  color: #10b981;
+}
+
+.shareMessage, .commentMessage {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.25rem;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.activityTime {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.loadMoreButton {
+  background-color: transparent;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.loadMoreButton:hover {
+  background-color: #f3f4f6;
+}
+
+.loadMoreButton:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}

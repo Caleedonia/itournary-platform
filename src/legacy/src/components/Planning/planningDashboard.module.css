@@ -1,0 +1,736 @@
+.dashboardContainer {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Occasion Header */
+.occasionHeader {
+  margin-top: 80px; /* Account for fixed header */
+}
+
+.occasionImage {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.occasionOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(44, 62, 80, 0.3), rgba(44, 62, 80, 0.8));
+}
+
+.occasionContent {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  width: 100%;
+}
+
+.occasionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.occasionDate {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  border-radius: 4px;
+}
+
+.progressText {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Dashboard Main */
+.dashboardMain {
+  background-color: #f9f9f9;
+  min-height: calc(100vh - 380px); /* Account for header and occasion header */
+  padding: 2rem 0 4rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  gap: 2rem;
+}
+
+/* Sidebar Styles */
+.sidebar, .rightSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebarSection {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebarTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #2C3E50; /* Deep Indigo */
+  position: relative;
+}
+
+.sidebarTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: #4ECDC4; /* Soft Teal */
+}
+
+/* Tools List */
+.toolsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toolItem {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toolItem:hover {
+  background-color: rgba(78, 205, 196, 0.1); /* Soft Teal with opacity */
+}
+
+.toolItem i {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.activeToolItem {
+  background-color: #2C3E50; /* Deep Indigo */
+  color: #fff;
+}
+
+.activeToolItem i {
+  color: #fff;
+}
+
+/* Collaborators List */
+.collaboratorsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collaboratorItem {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.collaboratorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+
+.collaboratorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collaboratorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.collaboratorName {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.collaboratorRole {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.addCollaborator {
+  margin-top: 1rem;
+}
+
+.addCollaboratorButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: rgba(78, 205, 196, 0.1); /* Soft Teal with opacity */
+  border: 1px dashed #4ECDC4; /* Soft Teal */
+  border-radius: 8px;
+  color: #2C3E50; /* Deep Indigo */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addCollaboratorButton:hover {
+  background-color: rgba(78, 205, 196, 0.2);
+}
+
+.addCollaboratorButton i {
+  margin-right: 0.5rem;
+}
+
+/* Insight Card */
+.insightCard {
+  background-color: rgba(78, 205, 196, 0.05);
+  border-left: 3px solid #4ECDC4; /* Soft Teal */
+  padding: 1.2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.insightHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.insightHeader img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.insightHeader span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.insightText {
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.insightLink {
+  color: #4ECDC4; /* Soft Teal */
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.insightLink:hover {
+  text-decoration: underline;
+}
+
+/* Main Content Area */
+.mainContent {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tabTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #2C3E50; /* Deep Indigo */
+  margin: 0;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1.2rem;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+.addButton i {
+  margin-right: 0.5rem;
+}
+
+/* Timeline Tab */
+.timelineContainer {
+  padding: 2rem;
+}
+
+.timelineItem {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  height: calc(100% + 2rem);
+  width: 2px;
+  background-color: #eee;
+  z-index: 1;
+}
+
+.timelineItem:last-child::before {
+  display: none;
+}
+
+.timelineMarker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #eee;
+  position: relative;
+  z-index: 2;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.completed .timelineMarker {
+  background-color: #4ECDC4; /* Soft Teal */
+}
+
+.in-progress .timelineMarker {
+  background-color: #FFA000; /* Warm Amber */
+}
+
+.pending .timelineMarker {
+  background-color: #eee;
+}
+
+.timelineContent {
+  flex-grow: 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.completed .timelineContent {
+  border-left: 3px solid #4ECDC4; /* Soft Teal */
+}
+
+.in-progress .timelineContent {
+  border-left: 3px solid #FFA000; /* Warm Amber */
+}
+
+.pending .timelineContent {
+  border-left: 3px solid #eee;
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.timelineTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.timelineDate {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.timelineDescription {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.timelineActions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.completeButton {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(78, 205, 196, 0.1);
+  color: #4ECDC4; /* Soft Teal */
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+.completeButton:hover {
+  background-color: rgba(78, 205, 196, 0.2);
+  color: #4ECDC4; /* Soft Teal */
+}
+
+.completeButton i {
+  margin-right: 0.5rem;
+}
+
+/* Budget Tab */
+.budgetSummary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.budgetCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.budgetCardTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.budgetCardAmount {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2C3E50; /* Deep Indigo */
+  font-weight: 700;
+}
+
+.budgetCategories {
+  padding: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.budgetCategory {
+  margin-bottom: 1.5rem;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.categoryName {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.categoryAmount {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.categoryProgress {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.categoryProgressFill {
+  height: 100%;
+  background-color: #4ECDC4; /* Soft Teal */
+  border-radius: 4px;
+}
+
+/* Coming Soon Placeholder */
+.comingSoon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.comingSoon img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.comingSoon h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.comingSoon p {
+  color: #666;
+  max-width: 400px;
+}
+
+/* Right Sidebar */
+.milestoneCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: rgba(255, 107, 107, 0.05);
+  border-left: 3px solid #FF6B6B; /* Vibrant Coral */
+  padding: 1.2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.milestoneIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 107, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF6B6B; /* Vibrant Coral */
+  font-size: 1.2rem;
+}
+
+.milestoneContent {
+  flex-grow: 1;
+}
+
+.milestoneTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.milestoneDescription {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.milestoneDate {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.expertCard {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.expertHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.expertHeader img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.expertName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 0.2rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.expertTitle {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.expertTip {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.expertContactButton {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #2C3E50; /* Deep Indigo */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.expertContactButton:hover {
+  background-color: #1a2530;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.actionButtonLarge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.actionButtonLarge:hover {
+  background-color: #eee;
+}
+
+.actionButtonLarge i {
+  margin-right: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .dashboardGrid {
+    grid-template-columns: 220px 1fr 250px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    display: none;
+  }
+  
+  .rightSidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .occasionTitle {
+    font-size: 2rem;
+  }
+  
+  .budgetSummary {
+    grid-template-columns: 1fr;
+  }
+  
+  .rightSidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .occasionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .tabHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .timelineHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

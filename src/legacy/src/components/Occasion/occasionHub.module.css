@@ -1,0 +1,324 @@
+.occasionHubContainer {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.heroSection {
+  height: 40vh;
+  min-height: 300px;
+  background-image: url('/images/occasion-hub-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 80px; /* Account for fixed header */
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 62, 80, 0.7); /* Deep Indigo with opacity */
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+/* Main Section */
+.mainSection {
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Filter Section */
+.filterSection {
+  margin-bottom: 3rem;
+}
+
+.searchContainer {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  padding-right: 3.5rem;
+  border: 2px solid #eee;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #4ECDC4; /* Soft Teal */
+  box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+}
+
+.searchButton {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: #FF6B6B; /* Vibrant Coral */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+
+.categoryTabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.categoryTab {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #666;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.categoryTab:hover {
+  color: #2C3E50; /* Deep Indigo */
+  background-color: rgba(78, 205, 196, 0.1); /* Soft Teal with opacity */
+}
+
+.activeTab {
+  color: #fff;
+  background-color: #2C3E50; /* Deep Indigo */
+}
+
+/* Occasions Grid */
+.occasionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* No Results */
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.noResultsIcon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.noResults h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.noResults p {
+  color: #666;
+}
+
+/* Inspiration Section */
+.inspirationSection {
+  background-color: #f9f9f9;
+  padding: 5rem 0;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.sectionSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #666;
+}
+
+.inspirationCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.inspirationCard {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.inspirationCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.inspirationImage {
+  height: 200px;
+  overflow: hidden;
+}
+
+.inspirationImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.inspirationCard:hover .inspirationImage img {
+  transform: scale(1.05);
+}
+
+.inspirationContent {
+  padding: 1.5rem;
+}
+
+.inspirationTag {
+  display: inline-block;
+  background-color: #4ECDC4; /* Soft Teal */
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.inspirationContent h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #2C3E50; /* Deep Indigo */
+}
+
+.inspirationContent p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.inspirationLink {
+  color: #FF6B6B; /* Vibrant Coral */
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.inspirationLink:hover {
+  color: #ff5252;
+}
+
+.inspirationLink::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.inspirationLink:hover::after {
+  transform: translateX(5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .categoryTabs {
+    gap: 0.5rem;
+  }
+  
+  .categoryTab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .inspirationCards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    min-height: 250px;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

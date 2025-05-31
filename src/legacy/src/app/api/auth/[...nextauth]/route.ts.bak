@@ -1,0 +1,108 @@
+// src/app/api/auth/[...nextauth]/route.ts
+import NextAuth, { NextAuthOptions, User as NextAuthUser } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import dbConnect from "@/lib/mongodb";
+import User, { IUser } from "@/models/User"; // Import our Mongoose User model
+
+export const authOptions: NextAuthOptions = {
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+      credentials: {
+        email: { label: "Email", type: "email", placeholder: "john.doe@example.com" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials, req) {
+        if (!credentials?.email || !credentials.password) {
+          console.log("Missing credentials");
+          return null;
+        }
+
+        await dbConnect();
+        console.log(`Attempting to authorize user: ${credentials.email}`);
+
+        const user = await User.findOne<IUser>({ email: credentials.email });
+
+        if (!user) {
+          console.log(`User not found: ${credentials.email}`);
+          return null; // User not found
+        }
+
+        if (!user.password) {
+            console.log(`User ${credentials.email} does not have a password set (likely OAuth user).`);
+            return null; // User might exist but has no password (e.g. signed up with OAuth)
+        }
+
+        const isPasswordValid = await user.comparePassword(credentials.password);
+
+        if (isPasswordValid) {
+          console.log(`Password valid for user: ${credentials.email}`);
+          // Return user object that NextAuth expects for the jwt callback
+          return {
+            id: user._id.toString(), // Use MongoDB ObjectId as id
+            name: user.name, // Will be used by default in JWT if not overridden
+            email: user.email, // Will be used by default in JWT if not overridden
+            role: user.role, // Custom property
+          } as NextAuthUser & { role?: string }; 
+        } else {
+          console.log(`Invalid password for user: ${credentials.email}`);
+          return null; // Login failed
+        }
+      },
+    }),
+  ],
+  session: {
+    strategy: "jwt",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      // This callback is called whenever a JWT is created (i.e. on sign in) 
+      // or updated (i.e. whenever a session is accessed in the client).
+      // The `user` parameter is only available on sign-in.
+      if (user) {
+        // On sign-in, create a lean token.
+        // Standard claims like iat, exp, jti will be added automatically.
+        return {
+          sub: user.id, // Standard claim for user ID
+          role: user.role, // Custom claim
+          // name: user.name, // Optionally include if small and needed in token
+          // email: user.email, // Optionally include if small and needed in token
+        };
+      }
+      // For subsequent calls, `token` is the existing decoded JWT.
+      // We return it unmodified here unless we need to refresh or update it.
+      return token;
+    },
+    async session({ session, token }) {
+      // This callback is called whenever a session is checked.
+      // `token` is the GWT payload (from the jwt callback).
+      // We populate `session.user` with the data needed by the client.
+      if (session.user) {
+        // @ts-ignore
+        session.user.id = token.sub; // Use 'sub' from token as user.id
+        // @ts-ignore
+        if (token.role) {
+          // @ts-ignore
+          session.user.role = token.role as string;
+        }
+        // Clear out default fields if they are not in the token to avoid undefined
+        // Or explicitly set them if they were included in the lean JWT above
+        // @ts-ignore
+        // session.user.name = token.name; 
+        // @ts-ignore
+        // session.user.email = token.email;
+      }
+      return session;
+    },
+  },
+  pages: {
+    signIn: "/account", 
+  },
+  secret: process.env.NEXTAUTH_SECRET, 
+  debug: process.env.NODE_ENV === "development",
+};
+
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };
+

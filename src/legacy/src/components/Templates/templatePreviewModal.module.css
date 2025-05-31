@@ -1,0 +1,509 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #4A5568;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background-color: #EDF2F7;
+}
+
+.modalHeader {
+  padding: 24px 32px;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0;
+}
+
+.expertBadge {
+  background-color: #F6E05E;
+  color: #744210;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.modalTabs {
+  display: flex;
+  border-bottom: 1px solid #E2E8F0;
+  background-color: #F7FAFC;
+}
+
+.tabButton {
+  padding: 16px 24px;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tabButton:hover {
+  color: #2D3748;
+  background-color: #EDF2F7;
+}
+
+.activeTab {
+  color: #4299E1;
+  border-bottom-color: #4299E1;
+  background-color: white;
+}
+
+.modalTabContent {
+  padding: 24px 32px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.modalFooter {
+  padding: 16px 32px;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelButton {
+  padding: 10px 16px;
+  background-color: white;
+  border: 1px solid #CBD5E0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: #EDF2F7;
+}
+
+.selectButton {
+  padding: 10px 20px;
+  background-color: #4299E1;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.selectButton:hover {
+  background-color: #3182CE;
+}
+
+/* Tab Content Styles */
+
+.tabContentTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.tabContentDescription {
+  font-size: 0.875rem;
+  color: #4A5568;
+  margin-bottom: 24px;
+}
+
+.emptyStateMessage {
+  text-align: center;
+  padding: 32px;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Overview Tab */
+
+.templateImageContainer {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.templateImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.templateDescription {
+  margin-bottom: 24px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #4A5568;
+}
+
+.benefitsTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin-bottom: 16px;
+}
+
+.benefitsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.benefitItem {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background-color: #F7FAFC;
+  border-radius: 8px;
+}
+
+.benefitIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.benefitContent {
+  flex-grow: 1;
+}
+
+.benefitName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 4px 0;
+}
+
+.benefitValue {
+  font-size: 0.875rem;
+  color: #4A5568;
+  margin: 0;
+}
+
+/* Checklist Tab */
+
+.checklistItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklistItem {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: #F7FAFC;
+  border-radius: 8px;
+  border-left: 3px solid #4299E1;
+}
+
+.checklistItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #BEE3F8;
+  color: #2B6CB0;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.checklistItemContent {
+  flex-grow: 1;
+}
+
+.checklistItemName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 4px 0;
+}
+
+.checklistItemDescription {
+  font-size: 0.8125rem;
+  color: #4A5568;
+  margin: 0 0 8px 0;
+}
+
+.checklistItemCategory {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #E2E8F0;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #4A5568;
+}
+
+/* Timeline Tab */
+
+.timelinePhases {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timelinePhase {
+  padding: 16px;
+  background-color: #F7FAFC;
+  border-radius: 8px;
+  border-left: 3px solid #4299E1;
+}
+
+.timelinePhaseHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.timelinePhaseIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #4299E1;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.timelinePhaseName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.timelinePhaseDuration {
+  font-size: 0.75rem;
+  color: #718096;
+  background-color: #EDF2F7;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.timelinePhaseDescription {
+  font-size: 0.875rem;
+  color: #4A5568;
+  margin: 0 0 12px 0;
+}
+
+.timelinePhaseTasks {
+  margin-top: 8px;
+}
+
+.timelinePhaseTasksTitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #4A5568;
+  margin: 0 0 8px 0;
+}
+
+.timelinePhaseTasksList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timelinePhaseTask {
+  font-size: 0.8125rem;
+  color: #4A5568;
+  padding: 4px 0;
+  position: relative;
+  padding-left: 16px;
+}
+
+.timelinePhaseTask::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4299E1;
+}
+
+.timelinePhaseTaskMore {
+  font-size: 0.75rem;
+  color: #718096;
+  font-style: italic;
+  padding: 4px 0;
+}
+
+/* Budget Tab */
+
+.budgetCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.budgetCategoriesChart {
+  margin-bottom: 16px;
+}
+
+.budgetChart {
+  height: 24px;
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.budgetChartSegment {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.budgetChartSegment:hover {
+  opacity: 0.8;
+}
+
+.budgetCategoriesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.budgetCategory {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background-color: #F7FAFC;
+  border-radius: 8px;
+}
+
+.budgetCategoryColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+.budgetCategoryContent {
+  flex-grow: 1;
+}
+
+.budgetCategoryName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2D3748;
+  margin: 0 0 4px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.budgetCategoryPercentage {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #4A5568;
+}
+
+.budgetCategoryNotes {
+  font-size: 0.8125rem;
+  color: #4A5568;
+  margin: 0;
+}
+
+.moreItemsNote {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.875rem;
+  color: #718096;
+  font-style: italic;
+  background-color: #F7FAFC;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .modalHeader {
+    padding: 16px 20px;
+  }
+  
+  .modalTitle {
+    font-size: 1.25rem;
+  }
+  
+  .tabButton {
+    padding: 12px 16px;
+    font-size: 0.8125rem;
+  }
+  
+  .modalTabContent {
+    padding: 16px 20px;
+  }
+  
+  .modalFooter {
+    padding: 12px 20px;
+  }
+  
+  .benefitsList {
+    grid-template-columns: 1fr;
+  }
+  
+  .budgetCategoriesList {
+    grid-template-columns: 1fr;
+  }
+}
