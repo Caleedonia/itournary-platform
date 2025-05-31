@@ -1,0 +1,202 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.step {
+  margin-bottom: 1.5rem;
+}
+
+.step h2 {
+  font-size: 1.4rem;
+  color: var(--primary-600);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.dateContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.dateContainer .formGroup {
+  flex: 1;
+}
+
+.activityInput {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.activityInput input {
+  flex: 1;
+}
+
+.addButton {
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.activitiesList {
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.removeButton {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.emptyMessage {
+  color: #999;
+  text-align: center;
+  padding: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.nextButton,
+.backButton,
+.saveButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nextButton {
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+}
+
+.nextButton:hover {
+  background-color: var(--primary-700);
+}
+
+.backButton {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.backButton:hover {
+  background-color: #e5e5e5;
+}
+
+.saveButton {
+  background-color: var(--accent-green);
+  color: white;
+  border: none;
+}
+
+.saveButton:hover {
+  background-color: #49ad17;
+}
+
+.guestNote {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.signUpLink {
+  color: var(--primary-600);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .dateContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nextButton,
+  .backButton,
+  .saveButton {
+    width: 100%;
+  }
+}

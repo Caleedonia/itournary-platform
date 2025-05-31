@@ -1,0 +1,129 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.lockedFeature {
+  background-color: var(--neutral-200);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.lockedFeature h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--neutral-800);
+  margin-bottom: 1rem;
+}
+
+.lockedFeature p {
+  font-size: var(--text-base);
+  color: var(--neutral-700);
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.previewButton, .signUpButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.previewButton {
+  background-color: transparent;
+  color: var(--primary-600);
+  border: 1px solid var(--primary-600);
+}
+
+.previewButton:hover {
+  background-color: var(--primary-100);
+}
+
+.signUpButton {
+  background-color: var(--primary-600);
+  color: white;
+  border: none;
+}
+
+.signUpButton:hover {
+  background-color: var(--primary-700);
+}
+
+.previewContainer {
+  position: relative;
+}
+
+.previewOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.previewContent {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.previewContent h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--neutral-800);
+  margin-bottom: 1rem;
+}
+
+.previewContent p {
+  font-size: var(--text-base);
+  color: var(--neutral-700);
+  margin-bottom: 1.5rem;
+}
+
+.closeButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--neutral-200);
+  color: var(--neutral-700);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--neutral-300);
+}
+
+@media (max-width: 640px) {
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .previewContent {
+    width: 90%;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
