@@ -1,0 +1,66 @@
+.container {
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.occasionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.occasionCard {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.occasionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.occasionCard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.occasionCard p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.occasionLink {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.occasionLink:hover {
+  background-color: #005ad1;
+}
+
+@media (max-width: 768px) {
+  .occasionGrid {
+    grid-template-columns: 1fr;
+  }
+}

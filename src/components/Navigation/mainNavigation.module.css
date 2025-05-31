@@ -1,0 +1,178 @@
+.mainNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoContainer {
+  flex: 0 0 auto;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.navLinks {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.navLinks ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0 1rem;
+  position: relative;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a:hover {
+  color: #0070f3;
+}
+
+.navLinks li.active a {
+  color: #0070f3;
+}
+
+.navLinks li.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0070f3;
+}
+
+.authButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.loginButton, .signupButton {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.loginButton {
+  color: #0070f3;
+  border: 1px solid #0070f3;
+}
+
+.loginButton:hover {
+  background-color: rgba(0, 112, 243, 0.1);
+}
+
+.signupButton {
+  background-color: #0070f3;
+  color: white;
+  border: 1px solid #0070f3;
+}
+
+.signupButton:hover {
+  background-color: #005ad1;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: block;
+    order: 1;
+  }
+  
+  .logoContainer {
+    order: 0;
+  }
+  
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    order: 2;
+  }
+  
+  .navLinks.mobileOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .navLinks ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .navLinks li {
+    margin: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .authButtons {
+    order: 3;
+  }
+}
