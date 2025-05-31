@@ -1,0 +1,455 @@
+.itineraryEditor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  padding: 24px;
+  background: linear-gradient(135deg, #2C3E50, #4A6491);
+  color: white;
+}
+
+.header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.destination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.destinationName {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.duration, .travelers {
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.editButton, .saveButton {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.editButton.active {
+  background-color: white;
+  color: #2C3E50;
+}
+
+.saveButton {
+  background-color: #FF6B6B;
+  border: none;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #fa5252;
+}
+
+.backButton {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.content {
+  display: flex;
+  min-height: 600px;
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+}
+
+.daySelector {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.dayButton {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.dayButton:hover {
+  border-color: #adb5bd;
+}
+
+.activeDay {
+  border-color: #4A6491;
+  background-color: #f1f3f9;
+}
+
+.dayNumber {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.dayDate {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.summarySection {
+  padding: 16px;
+  flex: 1;
+}
+
+.summarySection h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #343a40;
+}
+
+.summaryItem {
+  margin-bottom: 12px;
+}
+
+.summaryLabel {
+  font-weight: 500;
+  color: #495057;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.summaryValue {
+  color: #212529;
+}
+
+.budgetBreakdown {
+  margin-top: 16px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.budgetItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f3f5;
+  font-size: 0.9rem;
+}
+
+.budgetItem:last-child {
+  border-bottom: none;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 24px;
+  position: relative;
+}
+
+.dayContent {
+  width: 100%;
+}
+
+.hiddenContent {
+  display: none;
+}
+
+.dayHeader {
+  margin-bottom: 24px;
+}
+
+.dayHeader h2 {
+  margin: 0 0 8px 0;
+  color: #212529;
+}
+
+.dayHeader p {
+  margin: 0;
+  color: #6c757d;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #dee2e6;
+}
+
+.activityCard {
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.activityTime {
+  position: absolute;
+  left: -40px;
+  top: 16px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.activityContent {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  padding: 16px;
+  margin-left: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.activityContent::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 16px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4A6491;
+  border: 2px solid white;
+  z-index: 1;
+}
+
+.activityContent.booked {
+  border-color: #40c057;
+  background-color: #f4faf5;
+}
+
+.activityContent.booked::before {
+  background-color: #40c057;
+}
+
+.activityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.activityTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #212529;
+}
+
+.activityType {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  color: #495057;
+  text-transform: capitalize;
+}
+
+.activityDescription {
+  margin-bottom: 16px;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.activityDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.detailLabel {
+  font-weight: 500;
+  color: #6c757d;
+  margin-right: 4px;
+}
+
+.activityActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e9ecef;
+  padding-top: 12px;
+}
+
+.bookingToggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bookingToggle input {
+  margin-right: 8px;
+}
+
+.toggleLabel {
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.deleteButton {
+  background-color: #fa5252;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.deleteButton:hover {
+  background-color: #e03131;
+}
+
+.notes {
+  padding: 24px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.notes h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #343a40;
+}
+
+.notes ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.notes li {
+  margin-bottom: 8px;
+  color: #495057;
+}
+
+.loading, .error {
+  padding: 40px;
+  text-align: center;
+  color: #495057;
+}
+
+.error {
+  color: #fa5252;
+}
+
+.editInput, .editTextarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.editTextarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+@media (max-width: 992px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .daySelector {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 16px;
+    gap: 8px;
+  }
+  
+  .dayButton {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.5rem;
+    margin-top: 24px;
+  }
+  
+  .backButton {
+    top: 16px;
+    left: 16px;
+  }
+  
+  .destination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .activityDetails {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

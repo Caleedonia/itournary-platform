@@ -1,0 +1,63 @@
+.inputForm {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.inputField {
+  flex: 1;
+  min-height: 44px;
+  max-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 24px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.inputField:focus {
+  border-color: #4A6491;
+}
+
+.inputField::placeholder {
+  color: #adb5bd;
+}
+
+.inputField:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.sendButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #4A6491;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sendButton:hover:not(:disabled) {
+  background-color: #3a5180;
+}
+
+.sendButton:disabled {
+  background-color: #ced4da;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .inputField {
+    font-size: 16px; /* Prevent zoom on mobile */
+  }
+}

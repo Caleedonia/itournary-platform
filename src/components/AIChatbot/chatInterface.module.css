@@ -1,0 +1,101 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.chatHeader {
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #2C3E50, #4A6491);
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.chatHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.chatHeader p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputContainer {
+  padding: 16px;
+  border-top: 1px solid #e9ecef;
+  background-color: white;
+}
+
+.suggestionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 12px;
+  background-color: white;
+}
+
+.suggestionButton {
+  background-color: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestionButton:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+
+.generateButton {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #FF6B6B;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.generateButton:hover {
+  background-color: #fa5252;
+}
+
+@media (max-width: 768px) {
+  .chatContainer {
+    height: calc(100vh - 80px);
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .chatHeader {
+    border-radius: 0;
+  }
+}
