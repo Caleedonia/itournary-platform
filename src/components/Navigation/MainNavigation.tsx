@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useGuest } from '../../context/GuestContext';
 import styles from './mainNavigation.module.css';
 
 const MainNavigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { isGuest } = useGuest();
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -47,6 +49,18 @@ const MainNavigation = () => {
       </div>
       
       <div className={styles.authButtons}>
+        {isGuest && (
+          <span style={{
+            backgroundColor: 'rgba(24, 144, 255, 0.1)',
+            color: 'var(--primary-600)',
+            padding: '4px 8px',
+            borderRadius: '4px',
+            fontSize: '0.8rem',
+            marginRight: '1rem'
+          }}>
+            Guest Mode
+          </span>
+        )}
         <Link href="/login" className={styles.loginButton}>
           Log In
         </Link>

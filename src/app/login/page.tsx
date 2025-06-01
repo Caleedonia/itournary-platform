@@ -1,133 +1,150 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import MainLayout from '../../components/Layout/MainLayout';
 
-export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
+export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
-    setError("");
-
-    try {
-      // Simulate successful login and redirect
-      setTimeout(() => {
-        window.location.href = "/dashboard";
-      }, 1500);
-    } catch (error) {
-      setError("Invalid email or password");
-      setIsLoading(false);
-    }
+    // Mock login logic
+    console.log("Login attempt with:", { email, password });
+    
+    // Redirect to dashboard after login
+    window.location.href = '/dashboard';
   };
-
+  
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-      <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-md">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Welcome back to iTournary
-          </p>
+    <MainLayout>
+      <div style={{
+        display: 'flex',
+        minHeight: 'calc(100vh - 200px)',
+        backgroundColor: '#f5f5f5'
+      }}>
+        <div style={{
+          flex: '1',
+          padding: '2rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#fff',
+        }}>
+          <div style={{ maxWidth: '400px', width: '100%' }}>
+            <h1 style={{ fontSize: '2rem', marginBottom: '1.5rem', textAlign: 'center' }}>Welcome Back</h1>
+            
+            <form onSubmit={handleSubmit}>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 500 }}>
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px'
+                  }}
+                  required
+                />
+              </div>
+              
+              <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between',
+                  marginBottom: '0.5rem'
+                }}>
+                  <label style={{ fontWeight: 500 }}>Password</label>
+                  <Link href="/forgot-password" style={{
+                    color: 'var(--primary-600)',
+                    fontSize: '0.9rem',
+                    textDecoration: 'none'
+                  }}>
+                    Forgot Password?
+                  </Link>
+                </div>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px'
+                  }}
+                  required
+                />
+              </div>
+              
+              <button
+                type="submit"
+                style={{
+                  width: '100%',
+                  padding: '0.75rem',
+                  backgroundColor: 'var(--primary-600)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  fontSize: '1rem',
+                  fontWeight: 500,
+                  cursor: 'pointer'
+                }}
+              >
+                Log In
+              </button>
+            </form>
+            
+            <div style={{ 
+              marginTop: '2rem',
+              textAlign: 'center'
+            }}>
+              Don't have an account?{' '}
+              <Link href="/signup" style={{
+                color: 'var(--primary-600)',
+                textDecoration: 'none',
+                fontWeight: 500
+              }}>
+                Sign up
+              </Link>
+            </div>
+          </div>
         </div>
-
-        {error && (
-          <div className="bg-red-50 text-red-500 p-3 rounded-md text-sm">
-            {error}
-          </div>
-        )}
-
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+        
+        <div style={{
+          flex: '1',
+          background: 'url(/images/hero/home-hero.jpg) center center/cover',
+          position: 'relative',
+          display: 'none', // Hide on mobile
+          '@media (min-width: 768px)': {
+            display: 'block'
+          }
+        }}>
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem'
+          }}>
+            <div style={{ color: 'white', maxWidth: '400px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Plan Your Perfect Journey</h2>
+              <p style={{ fontSize: '1.1rem', lineHeight: 1.6 }}>
+                Create personalized travel experiences for weddings, sports tournaments, and more.
+              </p>
             </div>
           </div>
-
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-              />
-              <label
-                htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-900"
-              >
-                Remember me
-              </label>
-            </div>
-
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
-                Forgot password?
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-blue-300"
-            >
-              {isLoading ? "Signing in..." : "Sign in"}
-            </button>
-          </div>
-        </form>
-
-        <div className="text-center text-sm">
-          <p className="text-gray-600">
-            Don&apos;t have an account?{" "}
-            <Link
-              href="/signup"
-              className="font-medium text-blue-600 hover:text-blue-500"
-            >
-              Sign up
-            </Link>
-          </p>
         </div>
       </div>
-    </div>
+    </MainLayout>
   );
 }
