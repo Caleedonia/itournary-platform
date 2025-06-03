@@ -7,7 +7,7 @@ export function AdminNavLink() {
   const { data: session } = useSession();
   
   // Show admin link only if user has admin role
-  if (session?.user?.role === 'admin') {
+  if (session?.user && 'role' in session.user && session.user.role === 'admin') {
     return (
       <li>
         <Link href="/admin" className="hover:text-coral-500 transition-colors">
